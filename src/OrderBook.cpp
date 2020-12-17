@@ -11,7 +11,7 @@ OrderBook::OrderBook(std::string filename)
     orders = CSVReader::readCSV(filename);
 }
 
-/** return vector of all know products in the dataset*/
+/** return vector of all known products in the dataset*/
 std::vector<std::string> OrderBook::getKnownProducts()
 {
     std::vector<std::string> products;
@@ -31,23 +31,44 @@ std::vector<std::string> OrderBook::getKnownProducts()
 
     return products;
 }
-/** return vector of Orders according to the sent filters*/
-std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type, 
-                                        std::string product, 
-                                        std::string timestamp)
+
+std::vector<std::string> OrderBook::getTimeStamp()
 {
-    std::vector<OrderBookEntry> orders_sub;
+    std::vector<std::string> timeFrame;
+
+    std::map<std::string,bool> timeMap;
+
     for (OrderBookEntry& e : orders)
     {
-        if (e.orderType == type && 
-            e.product == product && 
-            e.timestamp == timestamp )
-            {
-                orders_sub.push_back(e);
-            }
+        timeMap[e.timestamp] = true;
     }
-    return orders_sub;
+    
+    // now flatten the map to a vector of strings
+    for (auto const& e : timeMap)
+    {
+        timeFrame.push_back(e.first);
+    }
+
+    return timeFrame;
 }
+
+    /** return vector of Orders according to the sent filters*/
+    std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type, 
+                                            std::string product, 
+                                            std::string timestamp)
+    {
+        std::vector<OrderBookEntry> orders_sub;
+        for (OrderBookEntry& e : orders)
+        {
+            if (e.orderType == type && 
+                e.product == product && 
+                e.timestamp == timestamp )
+                {
+                    orders_sub.push_back(e);
+                }
+        }
+        return orders_sub;
+    }
 
 
 double OrderBook::getHighPrice(std::vector<OrderBookEntry>& orders)
@@ -71,10 +92,58 @@ double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
     return min;
 }
 
+double OrderBook::getAveragePrice(std::vector<OrderBookEntry>& orders)
+{
+    double mean = orders[0].price;
+    double sum = 0;
+    for (OrderBookEntry& e : orders)
+    {
+        sum += e.price;
+        mean = sum / orders.size();
+    }
+    return mean;
+    
+}
+
+double OrderBook::getAverageAmount(std::vector<OrderBookEntry>& orders)
+{
+    double mean = orders[0].amount;
+    double sum = 0;
+    for (OrderBookEntry& e : orders)
+    {
+        sum += e.amount;
+        mean = sum / orders.size();
+    }
+    return mean;
+}
+
+double OrderBook::getEMA(std::vector<OrderBookEntry>& orders)
+{
+    //double lastEMA = getAveragePrice(orders); 
+    double range = 100;
+    double k = 2/(range + 1);
+    std::vector<double> emaArray;
+
+    for (OrderBookEntry& e : orders)
+    {
+        emaArray.push_back(e.price * k + emaArray[e.price - 1] * (1 - k));
+    }
+    return emaArray[0];
+
+}
+
+
 std::string OrderBook::getEarliestTime()
 {
     return orders[0].timestamp;
 }
+
+// std::vector<OrderBookEntry> OrderBook::getTimeStamp(std::string timestamp)
+// {
+//     //std::vector<OrderBookEntry> timestamp;
+//     std::cout << timestamp << std::endl;
+// }
+
 
 std::string OrderBook::getNextTime(std::string timestamp)
 {
@@ -109,7 +178,7 @@ std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std:
 // bids = orderbook.bids
     std::vector<OrderBookEntry> bids = getOrders(OrderBookType::bid, 
                                                  product, 
-                                                    timestamp);
+                                                timestamp);
 
     // sales = []
     std::vector<OrderBookEntry> sales; 

@@ -16,6 +16,8 @@ class OrderBook
                                               std::string product, 
                                               std::string timestamp);
 
+        std::vector<std::string> getTimeStamp();
+
         /** returns the earliest time in the orderbook*/
         std::string getEarliestTime();
         /** returns the next time after the 
@@ -30,9 +32,21 @@ class OrderBook
 
         static double getHighPrice(std::vector<OrderBookEntry>& orders);
         static double getLowPrice(std::vector<OrderBookEntry>& orders);
+        static double getAveragePrice(std::vector<OrderBookEntry>& orders);
+        static double getAverageAmount(std::vector<OrderBookEntry>& orders);
+        static double getEMA(std::vector<OrderBookEntry>& orders);
+        //double getSize(std::vector<OrderBookEntry>& orders);
+
+
+
+
+
+
 
     private:
         std::vector<OrderBookEntry> orders;
+        //double emaArray = orders[0].price;
+
 
 
 };
