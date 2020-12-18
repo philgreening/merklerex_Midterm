@@ -31,26 +31,26 @@ std::vector<std::string> OrderBook::getKnownProducts()
 
     return products;
 }
+//possible remove
+// std::vector<std::string> OrderBook::getTimeStamp()
+// {
+//     std::vector<std::string> timeFrame;
 
-std::vector<std::string> OrderBook::getTimeStamp()
-{
-    std::vector<std::string> timeFrame;
+//     std::map<std::string,bool> timeMap;
 
-    std::map<std::string,bool> timeMap;
-
-    for (OrderBookEntry& e : orders)
-    {
-        timeMap[e.timestamp] = true;
-    }
+//     for (OrderBookEntry& e : orders)
+//     {
+//         timeMap[e.timestamp] = true;
+//     }
     
-    // now flatten the map to a vector of strings
-    for (auto const& e : timeMap)
-    {
-        timeFrame.push_back(e.first);
-    }
+//     // now flatten the map to a vector of strings
+//     for (auto const& e : timeMap)
+//     {
+//         timeFrame.push_back(e.first);
+//     }
 
-    return timeFrame;
-}
+//     return timeFrame;
+// }
 
     /** return vector of Orders according to the sent filters*/
     std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type, 
@@ -169,7 +169,7 @@ void OrderBook::insertOrder(OrderBookEntry& order)
     std::sort(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp);
 }
 
-std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp)
+std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp, std::string username)
 {
 // asks = orderbook.asks
     std::vector<OrderBookEntry> asks = getOrders(OrderBookType::ask, 
@@ -215,14 +215,19 @@ std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std:
                 product, 
                 OrderBookType::asksale};
 
-                if (bid.username == "simuser")
+//                if (bid.username == "simuser")
+                if (bid.username == username) 
+
                 {
-                    sale.username = "simuser";
+                    sale.username = username;
+                    //sale.username = "simuser";
                     sale.orderType = OrderBookType::bidsale;
                 }
-                if (ask.username == "simuser")
+                //if (ask.username == "simuser")
+                if (ask.username == username)
                 {
-                    sale.username = "simuser";
+                    //sale.username = "simuser";
+                    sale.username = username;
                     sale.orderType =  OrderBookType::asksale;
                 }
             

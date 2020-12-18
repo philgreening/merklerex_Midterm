@@ -12,9 +12,22 @@ MerkelMain::MerkelMain()
 void MerkelMain::init()
 {
     int input;
+    username = "simuser";
     currentTime = orderBook.getEarliestTime();
 
     wallet.insertCurrency("BTC", 10);
+
+    while(true)
+    {
+        printStartMenu();
+        input = getStartOption();
+        processStartOption(input);
+    }
+}
+
+void MerkelMain::initUserMode()
+{
+    int input;
 
     while(true)
     {
@@ -23,6 +36,7 @@ void MerkelMain::init()
         processUserOption(input);
     }
 }
+
 
 
 void MerkelMain::printMenu()
@@ -166,7 +180,7 @@ void MerkelMain::gotoNextTimeframe()
     for (std::string p : orderBook.getKnownProducts())
     {
         std::cout << "matching " << p << std::endl;
-        std::vector<OrderBookEntry> sales =  orderBook.matchAsksToBids(p, currentTime);
+        std::vector<OrderBookEntry> sales =  orderBook.matchAsksToBids(p, currentTime, username);
         std::cout << "Sales: " << sales.size() << std::endl;
         for (OrderBookEntry& sale : sales)
         {
@@ -229,4 +243,50 @@ void MerkelMain::processUserOption(int userOption)
     {
         gotoNextTimeframe();
     }       
+}
+
+void MerkelMain::printStartMenu()
+{
+    std::cout << "==== Choose an Option ====" << std::endl;
+    std::cout << "1: Start MerkelRex user mode " << std::endl;
+    std::cout << "2: Start MerkelRex bot mode " << std::endl;
+
+}
+
+int MerkelMain::getStartOption()
+{
+    int userOption = 0;
+    std::string line;
+    std::cout << "Type in 1 or 2" << std::endl;
+    std::getline(std::cin, line);
+    try{
+        userOption = std::stoi(line);
+    }catch(const std::exception& e)
+    {
+        // 
+    }
+    std::cout << "You chose: " << userOption << std::endl;
+    return userOption;
+}
+
+void MerkelMain::processStartOption(int userOption)
+{
+    if (userOption != 1 && userOption != 2)
+    {
+        std::cout << "Invalid choice. Choose option 1 or 2" << std::endl;
+    }
+    if (userOption == 1)
+    {
+        std::cout << "Entering user mode" << std::endl;
+        // MerkelMain app{};
+        // app.init();
+        initUserMode();
+    }
+    if (userOption == 2)
+    {
+        std::cout << "Starting bot" << std::endl;
+        // MerkelBot botApp{};
+        botApp.init();
+    }
+     
 }

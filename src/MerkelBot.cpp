@@ -1,9 +1,10 @@
 #include "MerkelBot.h"
 #include <iostream>
 
-MerkelBot::MerkelBot()
+MerkelBot::MerkelBot(OrderBook& _orderBook)
+: orderBook(_orderBook)
 {
-
+    username = "bot";
 }
 
 void MerkelBot::init()
@@ -13,28 +14,22 @@ void MerkelBot::init()
     wallet.insertCurrency("BTC", 10);
     auto count = 0;
    
-
-     for (std::string const& t : orderBook.getTimeStamp())
-     //for(auto e : orderBook.getOrders())
-     //for (OrderBookEntry& e : orderBook)
-    //for (int i = 0 ; i <= currentTime.size(); i++)  
+    while(currentTime <  orderBook.getNextTime(currentTime))
     {
         predictFuture();
-        submitAsk();
-        submitBid();
+        getAsk();
+        getBid();
         gotoNextTimeframe();
         printWallet();
         count ++;
+        std::cout << count << std::endl;
     }
-    std::cout << count << std::endl;
 
 }
 
 void MerkelBot::predictFuture()
 {
-    
-
-     for (std::string const& p : orderBook.getKnownProducts())
+    for (std::string const& p : orderBook.getKnownProducts())
     {
         //TODO: prediction algorithm
         std::cout << "Product: " << p << std::endl;
@@ -56,12 +51,7 @@ void MerkelBot::predictFuture()
     }
 }
 
-// void MerkelBot::calculateEma()
-// {
-
-// }
-
-void MerkelBot::submitBid()
+void MerkelBot::getBid()
 {
 
     for (std::string const& p : orderBook.getKnownProducts())
@@ -70,118 +60,77 @@ void MerkelBot::submitBid()
         std::cout << "Product: " << p << std::endl;
         std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::ask, 
                                                                 p, currentTime);
-        
+        double bidPrice = OrderBook::getAveragePrice(entries);
+        double bidAmount = OrderBook::getAverageAmount(entries);
 
-        std::string bid = std::to_string(OrderBook::getAveragePrice(entries));
-        std::string amount = std::to_string(OrderBook::getAverageAmount(entries));
-        std::string input = p + ',' + bid + ','+ amount;
-        std::cout << "Bid input: "<< input << std::endl;
-        std::vector<std::string> tokens = CSVReader::tokenise(input, ',');
-
-
-    if (tokens.size() != 3)
-    {
-        std::cout << "MerkelMain::enterBid Bad input! " << input << std::endl;
-
+        submitBid(p, bidPrice, bidAmount);
     }
-    else {
-        try {
-            OrderBookEntry obe = CSVReader::stringsToOBE(
-                tokens[1],
-                tokens[2], 
-                currentTime, 
-                tokens[0], 
-                OrderBookType::bid 
-            );
-            obe.username = "simuser";
-
-            if (wallet.canFulfillOrder(obe))
-            {
-                std::cout << "Wallet looks good. " << std::endl;
-                orderBook.insertOrder(obe);
-            }
-            else {
-                std::cout << "Wallet has insufficient funds . " << std::endl;
-            }
-        }catch (const std::exception& e)
-        {
-            std::cout << " MerkelMain::enterBid Bad input " << std::endl;
-        }   
-    }
-        // std::cout << "Bids seen: " << entries.size() << std::endl;
-        // std::cout << "Max bid: " << OrderBook::getHighPrice(entries) << std::endl;
-        // std::cout << "Min bid: " << OrderBook::getLowPrice(entries) << std::endl;
-        std::cout << currentTime << std::endl;
-
-    }
-   
-    // std::cout << "Make an bid - enter the amount: product,price, amount, eg  ETH/BTC,200,0.5" << std::endl;
-    // std::string input;
-    // std::getline(std::cin, input);
-
-    
 }
 
-void MerkelBot::submitAsk()
+void MerkelBot::submitBid(std::string product, double price, double amount)
+{
+    OrderBookType orderType = OrderBookType::bid;
+    try {
+        OrderBookEntry obe{price,
+                       amount,
+                       currentTime, 
+                       product,
+                       orderType,
+                       username};
+
+        if (wallet.canFulfillOrder(obe))
+        {
+            std::cout << "Wallet has sufficient funds to accomodate bid." << std::endl;
+            orderBook.insertOrder(obe);
+        }
+        else {
+            std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
+        }
+    }catch (const std::exception& e)
+    {
+        std::cout << "Received invalid bid order." << std::endl;
+    }   
+}
+
+void MerkelBot::getAsk()
 {
 
     for (std::string const& p : orderBook.getKnownProducts())
     {
         //TODO: prediction algorithm
         std::cout << "Product: " << p << std::endl;
-        std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::ask, 
+        std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::bid, 
                                                                 p, currentTime);
-        std::vector<OrderBookEntry> entries1 = orderBook.getOrders(OrderBookType::bid, 
-                                                                p, currentTime);                              
-        
+        double askPrice = OrderBook::getAveragePrice(entries);
+        double askAmount = OrderBook::getAverageAmount(entries);
 
-        std::string bid = std::to_string(OrderBook::getAveragePrice(entries1));
-        std::string amount = std::to_string(OrderBook::getAverageAmount(entries1));
-        std::string input = p + ',' + bid + ','+ amount;
-        std::cout << "Ask input: "<< input << std::endl;
-
-        std::vector<std::string> tokens = CSVReader::tokenise(input, ',');
-
-
-    if (tokens.size() != 3)
-    {
-        std::cout << "MerkelMain::enterBid Bad input! " << input << std::endl;
-
+        submitAsk(p, askPrice, askAmount);
     }
-    else {
-        try {
-            OrderBookEntry obe = CSVReader::stringsToOBE(
-                tokens[1],
-                tokens[2], 
-                currentTime, 
-                tokens[0], 
-                OrderBookType::ask 
-            );
-            obe.username = "simuser";
+}
 
-            if (wallet.canFulfillOrder(obe))
-            {
-                std::cout << "Wallet looks good. " << std::endl;
-                orderBook.insertOrder(obe);
-            }
-            else {
-                std::cout << "Wallet has insufficient funds . " << std::endl;
-            }
-        }catch (const std::exception& e)
+void MerkelBot::submitAsk(std::string product, double price, double amount)
+{
+    OrderBookType orderType = OrderBookType::ask;
+    try {
+        OrderBookEntry obe{price,
+                       amount,
+                       currentTime, 
+                       product,
+                       orderType,
+                       username};
+
+        if (wallet.canFulfillOrder(obe))
         {
-            std::cout << " MerkelMain::enterBid Bad input " << std::endl;
-        }   
-    }
-        // std::cout << "Asks seen: " << entries.size() << std::endl;
-        // std::cout << "Max ask: " << OrderBook::getHighPrice(entries) << std::endl;
-        // std::cout << "Min ask: " << OrderBook::getLowPrice(entries) << std::endl;
-        std::cout << currentTime << std::endl;
-
-    }
-   
-    // std::cout << "Make an bid - enter the amount: product,price, amount, eg  ETH/BTC,200,0.5" << std::endl;
-    // std::string input;
-    // std::getline(std::cin, input);    
+            std::cout << "Wallet has sufficient funds to accomodate bid." << std::endl;
+            orderBook.insertOrder(obe);
+        }
+        else {
+            std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
+        }
+    }catch (const std::exception& e)
+    {
+        std::cout << "Received invalid bid order." << std::endl;
+    }   
 }
 
 void MerkelBot::gotoNextTimeframe()
@@ -190,12 +139,12 @@ void MerkelBot::gotoNextTimeframe()
     for (std::string p : orderBook.getKnownProducts())
     {
         std::cout << "matching " << p << std::endl;
-        std::vector<OrderBookEntry> sales =  orderBook.matchAsksToBids(p, currentTime);
+        std::vector<OrderBookEntry> sales =  orderBook.matchAsksToBids(p, currentTime, username);
         std::cout << "Sales: " << sales.size() << std::endl;
         for (OrderBookEntry& sale : sales)
         {
             std::cout << "Sale price: " << sale.price << " amount " << sale.amount << std::endl; 
-            if (sale.username == "simuser")
+            if (sale.username == "bot")
             {
                 // update the wallet
                 wallet.processSale(sale);
