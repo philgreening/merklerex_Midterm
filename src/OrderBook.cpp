@@ -32,7 +32,7 @@ std::vector<std::string> OrderBook::getKnownProducts()
     return products;
 }
 //possible remove
-// std::vector<std::string> OrderBook::getTimeStamp()
+// std::vector<std::string> OrderBook::getTimeStamp1()
 // {
 //     std::vector<std::string> timeFrame;
 
@@ -96,14 +96,16 @@ double OrderBook::getAveragePrice(std::vector<OrderBookEntry>& orders)
 {
     double mean = orders[0].price;
     double sum = 0;
+    // std::string timeFrame = getTimeStamp1();
     for (OrderBookEntry& e : orders)
     {
+  
         sum += e.price;
         mean = sum / orders.size();
     }
     return mean;
     
-}
+} 
 
 double OrderBook::getAverageAmount(std::vector<OrderBookEntry>& orders)
 {
@@ -111,6 +113,7 @@ double OrderBook::getAverageAmount(std::vector<OrderBookEntry>& orders)
     double sum = 0;
     for (OrderBookEntry& e : orders)
     {
+      
         sum += e.amount;
         mean = sum / orders.size();
     }

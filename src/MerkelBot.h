@@ -3,6 +3,7 @@
 #include "OrderBook.h"
 #include "OrderBookEntry.h"
 #include "Wallet.h"
+#include "LogBook.h"
 
 
 class MerkelBot
@@ -29,6 +30,7 @@ class MerkelBot
         Wallet wallet;
         std::string currentTime;
         std::string username;
+        LogBook logBook;
 
        
 

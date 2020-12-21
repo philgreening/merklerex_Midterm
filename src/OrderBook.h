@@ -16,7 +16,9 @@ class OrderBook
                                               std::string product, 
                                               std::string timestamp);
 
-        std::vector<std::string> getTimeStamp();
+        // std::vector<std::string> getTimeStamp(std::string timestamp);
+        // std::vector<std::string> getTimeStamp1();
+
 
         /** returns the earliest time in the orderbook*/
         std::string getEarliestTime();
