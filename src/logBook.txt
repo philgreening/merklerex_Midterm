@@ -1,296 +1,139 @@
 Wallet contains: 
 BTC : 10.000000
 
-0 ===== Current time: 2020/03/17 17:01:24.884492 =====
-BTC/USDT Average ask price: 5394.803600
-BTC/USDT Average bid price: 5317.706285
+0 ===== Current time: 2020/06/01 11:57:30.328127 =====
+BTC/USDT Average ask price: 9562.118063
+BTC/USDT Average bid price: 9521.653318
 DOGE/BTC Average ask price: 0.000001
 DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001853
-DOGE/USDT Average bid price: 0.001259
-ETH/BTC Average ask price: 0.022074
-ETH/BTC Average bid price: 0.021773
-ETH/USDT Average ask price: 119.501478
-ETH/USDT Average bid price: 115.210721
-Place ask: BTC/USDT ask price: 5317.706285 ask amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022074 bid amount: 1.000000
+DOGE/USDT Average ask price: 0.002657
+DOGE/USDT Average bid price: 0.002483
+ETH/BTC Average ask price: 0.024961
+ETH/BTC Average bid price: 0.024713
+ETH/USDT Average ask price: 238.329207
+ETH/USDT Average bid price: 235.516164
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 9521.653318 ask amount: 0.604994
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet looks good .
+Place bid: DOGE/BTC bid price: 0.000001 bid amount: 14140658.618888
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.024961 bid amount: 24.283469
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet has insufficient funds.
 Matching: BTC/USDT
 Sales: 1
-Sale price: 5317.706285 amount: 1.000000
+Sale price: 9521.653318 amount: 0.604994
 Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
+Sales: 2
+Sale price: 0.000000 amount: 1705063.753329
+Sale price: 0.000000 amount: 12435594.865559
 Matching: DOGE/USDT
 Sales: 0
 Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021891 amount: 1.000000
+Sales: 2
+Sale price: 0.024826 amount: 24.000000
+Sale price: 0.024827 amount: 0.283469
 Matching: ETH/USDT
 Sales: 0
 
-Going to next time frame: 2020/03/17 17:01:30.099017
+Going to next time frame: 2020/06/01 11:57:35.334211
 Wallet contains: 
-BTC : 8.978109
-DOGE : 1.000000
-ETH : 1.000000
-USDT : 5317.706285
+BTC : 4.849808
+DOGE : 14140658.618888
+ETH : 24.283469
+USDT : 5760.543227
 
-1 ===== Current time: 2020/03/17 17:01:30.099017 =====
-BTC/USDT Average ask price: 5394.370529
-BTC/USDT Average bid price: 5318.065997
+1 ===== Current time: 2020/06/01 11:57:35.334211 =====
+BTC/USDT Average ask price: 9559.764494
+BTC/USDT Average bid price: 9520.812114
 DOGE/BTC Average ask price: 0.000001
 DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001853
-DOGE/USDT Average bid price: 0.001228
-ETH/BTC Average ask price: 0.022058
-ETH/BTC Average bid price: 0.021774
-ETH/USDT Average ask price: 119.442406
-ETH/USDT Average bid price: 115.374223
-Place ask: BTC/USDT ask price: 5318.065997 ask amount: 1.000000
-Place ask: DOGE/BTC ask price: 0.000000 ask amount: 1.000000
-Place ask: DOGE/USDT ask price: 0.001228 ask amount: 1.000000
-Place ask: ETH/BTC ask price: 0.021774 ask amount: 1.000000
-Place ask: ETH/USDT ask price: 115.374223 ask amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: DOGE/USDT bid price: 0.001841 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022053 bid amount: 1.000000
-Place bid: ETH/USDT bid price: 119.362638 bid amount: 1.000000
+DOGE/USDT Average ask price: 0.002661
+DOGE/USDT Average bid price: 0.002483
+ETH/BTC Average ask price: 0.025070
+ETH/BTC Average bid price: 0.024710
+ETH/USDT Average ask price: 238.793149
+ETH/USDT Average bid price: 235.723892
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 9520.812114 ask amount: 0.510873
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.002483 ask amount: 54481.665929
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet looks good .
+Place ask: ETH/BTC ask price: 0.024710 ask amount: 21.914099
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet looks good .
+Place bid: BTC/USDT bid price: 9559.000721 bid amount: 0.471289
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.002657 bid amount: 72520.810192
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.025063 bid amount: 20.210955
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet has insufficient funds.
 Matching: BTC/USDT
-Sales: 8
-Sale price: 5318.065997 amount: 0.030816
-Sale price: 5318.065997 amount: 0.497376
-Sale price: 5318.065997 amount: 0.205203
-Sale price: 5318.065997 amount: 0.134390
-Sale price: 5318.065997 amount: 0.110000
-Sale price: 5318.065997 amount: 0.010000
-Sale price: 5318.065997 amount: 0.007093
-Sale price: 5318.065997 amount: 0.005122
+Sales: 2
+Sale price: 9520.812114 amount: 0.471289
+Sale price: 9520.812114 amount: 0.039583
 Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
+Sales: 0
 Matching: DOGE/USDT
-Sales: 1
-Sale price: 0.001228 amount: 1.000000
+Sales: 2
+Sale price: 0.002483 amount: 54481.665929
+Sale price: 0.002577 amount: 18039.144263
 Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021774 amount: 1.000000
+Sales: 2
+Sale price: 0.024710 amount: 20.210955
+Sale price: 0.024710 amount: 1.703144
 Matching: ETH/USDT
-Sales: 1
-Sale price: 115.374223 amount: 1.000000
+Sales: 0
 
-Going to next time frame: 2020/03/17 17:01:35.103526
+Going to next time frame: 2020/06/01 11:57:40.339453
 Wallet contains: 
-BTC : 7.999883
-DOGE : -1.000000
-ETH : -1.000000
-USDT : 10751.147733
+BTC : 4.880439
+DOGE : 14104216.097222
+ETH : 2.369370
+USDT : 10713.227612
 
-2 ===== Current time: 2020/03/17 17:01:35.103526 =====
-BTC/USDT Average ask price: 5398.160885
-BTC/USDT Average bid price: 5316.835949
+2 ===== Current time: 2020/06/01 11:57:40.339453 =====
+BTC/USDT Average ask price: 9565.616853
+BTC/USDT Average bid price: 9521.538236
 DOGE/BTC Average ask price: 0.000001
 DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001853
-DOGE/USDT Average bid price: 0.001259
-ETH/BTC Average ask price: 0.022097
-ETH/BTC Average bid price: 0.021784
-ETH/USDT Average ask price: 119.311064
-ETH/USDT Average bid price: 115.540959
-Place ask: BTC/USDT ask price: 5316.835949 ask amount: 1.000000
-Place bid: BTC/USDT bid price: 5396.566278 bid amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: DOGE/USDT bid price: 0.001853 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022097 bid amount: 1.000000
-Place bid: ETH/USDT bid price: 119.311064 bid amount: 1.000000
-Matching: BTC/USDT
-Sales: 1
-Sale price: 5316.835949 amount: 1.000000
-Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
-Matching: DOGE/USDT
-Sales: 1
-Sale price: 0.001654 amount: 1.000000
-Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021891 amount: 1.000000
-Matching: ETH/USDT
-Sales: 1
-Sale price: 117.329244 amount: 1.000000
-
-Going to next time frame: 2020/03/17 17:01:40.107326
-Wallet contains: 
-BTC : 6.977992
-DOGE : 1.000000
-ETH : 1.000000
-USDT : 15950.652785
-
-3 ===== Current time: 2020/03/17 17:01:40.107326 =====
-BTC/USDT Average ask price: 5394.800458
-BTC/USDT Average bid price: 5319.445910
-DOGE/BTC Average ask price: 0.000001
-DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001853
-DOGE/USDT Average bid price: 0.001259
-ETH/BTC Average ask price: 0.022084
-ETH/BTC Average bid price: 0.021787
-ETH/USDT Average ask price: 119.611443
-ETH/USDT Average bid price: 115.391939
-Place ask: BTC/USDT ask price: 5319.445910 ask amount: 1.000000
-Place ask: DOGE/BTC ask price: 0.000000 ask amount: 1.000000
-Place ask: DOGE/USDT ask price: 0.001259 ask amount: 1.000000
-Place ask: ETH/BTC ask price: 0.021787 ask amount: 1.000000
-Place ask: ETH/USDT ask price: 115.391939 ask amount: 1.000000
-Place bid: BTC/USDT bid price: 5393.322918 bid amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: DOGE/USDT bid price: 0.001842 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022078 bid amount: 1.000000
-Place bid: ETH/USDT bid price: 119.528708 bid amount: 1.000000
-Matching: BTC/USDT
-Sales: 1
-Sale price: 5319.445910 amount: 1.000000
-Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
-Matching: DOGE/USDT
-Sales: 1
-Sale price: 0.001259 amount: 1.000000
-Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021787 amount: 1.000000
-Matching: ETH/USDT
-Sales: 1
-Sale price: 115.391939 amount: 1.000000
-
-Going to next time frame: 2020/03/17 17:01:45.111661
-Wallet contains: 
-BTC : 5.999778
-DOGE : -1.000000
-ETH : -1.000000
-USDT : 21385.491893
-
-4 ===== Current time: 2020/03/17 17:01:45.111661 =====
-BTC/USDT Average ask price: 5398.785991
-BTC/USDT Average bid price: 5319.928681
-DOGE/BTC Average ask price: 0.000001
-DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001853
-DOGE/USDT Average bid price: 0.001228
-ETH/BTC Average ask price: 0.022098
-ETH/BTC Average bid price: 0.021794
-ETH/USDT Average ask price: 119.400768
-ETH/USDT Average bid price: 115.492195
-Place ask: BTC/USDT ask price: 5319.928681 ask amount: 1.000000
-Place bid: BTC/USDT bid price: 5397.239769 bid amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: DOGE/USDT bid price: 0.001853 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022098 bid amount: 1.000000
-Place bid: ETH/USDT bid price: 119.400768 bid amount: 1.000000
-Matching: BTC/USDT
-Sales: 1
-Sale price: 5319.928681 amount: 1.000000
-Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
-Matching: DOGE/USDT
-Sales: 1
-Sale price: 0.001653 amount: 1.000000
-Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021900 amount: 1.000000
-Matching: ETH/USDT
-Sales: 1
-Sale price: 117.488567 amount: 1.000000
-
-Going to next time frame: 2020/03/17 17:01:50.116610
-Wallet contains: 
-BTC : 4.977878
-DOGE : 1.000000
-ETH : 1.000000
-USDT : 26587.930354
-
-5 ===== Current time: 2020/03/17 17:01:50.116610 =====
-BTC/USDT Average ask price: 5401.926538
-BTC/USDT Average bid price: 5321.742942
-DOGE/BTC Average ask price: 0.000001
-DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001846
-DOGE/USDT Average bid price: 0.001259
-ETH/BTC Average ask price: 0.022074
-ETH/BTC Average bid price: 0.021797
-ETH/USDT Average ask price: 119.085213
-ETH/USDT Average bid price: 115.338233
-Place ask: BTC/USDT ask price: 5321.742942 ask amount: 1.000000
-Place ask: DOGE/BTC ask price: 0.000000 ask amount: 1.000000
-Place ask: DOGE/USDT ask price: 0.001259 ask amount: 1.000000
-Place ask: ETH/BTC ask price: 0.021797 ask amount: 1.000000
-Place ask: ETH/USDT ask price: 115.338233 ask amount: 1.000000
-Place bid: BTC/USDT bid price: 5400.354311 bid amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: DOGE/USDT bid price: 0.001834 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022068 bid amount: 1.000000
-Place bid: ETH/USDT bid price: 119.011743 bid amount: 1.000000
-Matching: BTC/USDT
-Sales: 1
-Sale price: 5321.742942 amount: 1.000000
-Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
-Matching: DOGE/USDT
-Sales: 1
-Sale price: 0.001259 amount: 1.000000
-Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021797 amount: 1.000000
-Matching: ETH/USDT
-Sales: 1
-Sale price: 115.338233 amount: 1.000000
-
-Going to next time frame: 2020/03/17 17:01:55.120438
-Wallet contains: 
-BTC : 3.999675
-DOGE : -1.000000
-ETH : -1.000000
-USDT : 32025.012788
-
-6 ===== Current time: 2020/03/17 17:01:55.120438 =====
-BTC/USDT Average ask price: 5390.673648
-BTC/USDT Average bid price: 5314.299159
-DOGE/BTC Average ask price: 0.000001
-DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.001846
-DOGE/USDT Average bid price: 0.001196
-ETH/BTC Average ask price: 0.022087
-ETH/BTC Average bid price: 0.021792
-ETH/USDT Average ask price: 119.259328
-ETH/USDT Average bid price: 115.413369
-Place ask: BTC/USDT ask price: 5314.299159 ask amount: 1.000000
-Place bid: BTC/USDT bid price: 5389.176109 bid amount: 1.000000
-Place bid: DOGE/BTC bid price: 0.000001 bid amount: 1.000000
-Place bid: DOGE/USDT bid price: 0.001846 bid amount: 1.000000
-Place bid: ETH/BTC bid price: 0.022087 bid amount: 1.000000
-Place bid: ETH/USDT bid price: 119.259328 bid amount: 1.000000
-Matching: BTC/USDT
-Sales: 1
-Sale price: 5314.299159 amount: 1.000000
-Matching: DOGE/BTC
-Sales: 1
-Sale price: 0.000000 amount: 1.000000
-Matching: DOGE/USDT
-Sales: 1
-Sale price: 0.001653 amount: 1.000000
-Matching: ETH/BTC
-Sales: 1
-Sale price: 0.021900 amount: 1.000000
-Matching: ETH/USDT
-Sales: 1
-Sale price: 117.446091 amount: 1.000000
-
-Going to next time frame: 2020/03/17 17:02:00.124758
-Wallet contains: 
-BTC : 2.977775
-DOGE : 1.000000
-ETH : 1.000000
-USDT : 37221.864202
-
+DOGE/USDT Average ask price: 0.002661
+DOGE/USDT Average bid price: 0.002483
+ETH/BTC Average ask price: 0.025022
+ETH/BTC Average bid price: 0.024723
+ETH/USDT Average ask price: 238.741829
+ETH/USDT Average bid price: 235.708416
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 9521.538236 ask amount: 0.588013
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .

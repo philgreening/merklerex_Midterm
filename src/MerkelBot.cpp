@@ -63,13 +63,14 @@ void MerkelBot::getBid()
     for (std::string const& p : orderBook.getKnownProducts())
     {
         //TODO: prediction algorithm
-        std::cout << "Product: " << p << std::endl;
+        //std::cout << "Product: " << p << std::endl;
+        logBook.write(" MerkelBot:: get bid: Product: " + p );
         std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::ask, 
                                                                 p, currentTime);
         double bidPrice = OrderBook::getAveragePrice(entries);
         double bidAmount = OrderBook::getAverageAmount(entries);
 
-        submitBid(p, bidPrice, 1);
+        submitBid(p, bidPrice, bidAmount);
         //logBook.write("Bid submitted: " + p + " Price: " + std::to_string(bidPrice)  + " Amount: " + std::to_string(1));
     }
 }
@@ -88,15 +89,20 @@ void MerkelBot::submitBid(std::string product, double price, double amount)
         if (wallet.canFulfillOrder(obe))
         {
             std::cout << "Wallet has sufficient funds to accomodate bid." << std::endl;
+            logBook.write("Bid:: Wallet looks good ." );
             orderBook.insertOrder(obe);
             logBook.write("Place bid: "  + product + " bid price: " + std::to_string(price) + " bid amount: " + std::to_string(amount));
         }
         else {
-            std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
+            //std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
+            logBook.write("Bid:: Wallet has insufficient funds." );
+
         }
     }catch (const std::exception& e)
     {
-        std::cout << "Received invalid bid order." << std::endl;
+        //std::cout << "MerkelBot::submitBid Bad Input." << std::endl;
+        logBook.write("MerkelBot::submitBid Bad Input." );
+
     }   
 }
 
@@ -106,13 +112,14 @@ void MerkelBot::getAsk()
     for (std::string const& p : orderBook.getKnownProducts())
     {
         //TODO: prediction algorithm
-        std::cout << "Product: " << p << std::endl;
+        //std::cout << "Product: " << p << std::endl;
+        logBook.write(" MerkelBot:: get ask: Product: " + p );
         std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::bid, 
                                                                 p, currentTime);
         double askPrice = OrderBook::getAveragePrice(entries);
         double askAmount = OrderBook::getAverageAmount(entries);
 
-        submitAsk(p, askPrice, 1);
+        submitAsk(p, askPrice, askAmount);
         //logBook.write("Ask submitted: " + p + " Price: " + std::to_string(askPrice)  + " Amount: " + std::to_string(1));
 
     }
@@ -131,17 +138,20 @@ void MerkelBot::submitAsk(std::string product, double price, double amount)
 
         if (wallet.canFulfillOrder(obe))
         {
-            std::cout << "Wallet has sufficient funds to accomodate bid." << std::endl;
+            //std::cout << "Wallet has sufficient funds to accomodate bid." << std::endl;
+            logBook.write("Ask:: Wallet looks good ." );
             orderBook.insertOrder(obe);
             logBook.write("Place ask: "  + product + " ask price: " + std::to_string(price) + " ask amount: " + std::to_string(amount));
 
         }
         else {
-            std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
+            //std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
+            logBook.write("Ask:: Wallet has insufficient funds." );
         }
     }catch (const std::exception& e)
     {
-        std::cout << "Received invalid bid order." << std::endl;
+        //std::cout << "Received invalid bid order." << std::endl;
+        logBook.write("MerkelBot::submitAsk Bad Input." );
     }   
 }
 

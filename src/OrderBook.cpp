@@ -120,21 +120,46 @@ double OrderBook::getAverageAmount(std::vector<OrderBookEntry>& orders)
     return mean;
 }
 
-double OrderBook::getEMA(std::vector<OrderBookEntry>& orders)
-{
-    //double lastEMA = getAveragePrice(orders); 
-    double range = 100;
-    double k = 2/(range + 1);
-    std::vector<double> emaArray;
+// double OrderBook::getEMA(std::vector<OrderBookEntry>& orders)
+// {
+//     //double lastEMA = getAveragePrice(orders); 
+//     double range = 100;
+//     double k = 2/(range + 1);
+//     double emaPrice = 0;
+//     std::vector<OrderBookEntry> emaArray;
 
-    for (OrderBookEntry& e : orders)
-    {
-        emaArray.push_back(e.price * k + emaArray[e.price - 1] * (1 - k));
-    }
-    return emaArray[0];
+//     for (OrderBookEntry& e : orders)
+//     {
+//         emaPrice = (e.price - emaArray[e.price - 1]) * k) + emaArray[e.price -1];
+//         emaArray.push_back(emaPrice);
+//     }
+//     return emaArray;
 
-}
+// }
 
+
+// double OrderBook::getEMA(std::vector<OrderBookEntry>& orders))
+// {
+// 	static double factor = 0;
+// 	static double lag = 0;
+// 	static double lastema = 0;
+// 	double ema;
+
+// 	if( <= 1)
+// 	{
+// 		ema = vals[0];
+// 		factor = 2.0 / (((float) numVals) + 1.0);
+// 		lag = (numVals - 1) / 2;
+// 	}
+// 	else
+// 	{
+// 		ema = (factor * ((2.0 * vals[0]) - vals[lag])) + 
+// 			((1.0 - factor) * lastema);
+// 		lastema = ema;
+// 	}
+
+// 	return ema;
+// }
 
 std::string OrderBook::getEarliestTime()
 {
@@ -170,7 +195,11 @@ void OrderBook::insertOrder(OrderBookEntry& order)
 {
     orders.push_back(order);
     std::sort(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp);
+    
+    // std::vector< std::vector<int> >::const_iterator it = std::find(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp);
+    // orders.insert(std::upper_bound(orders.begin(), orders.end(),order), order);
 }
+
 
 std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp, std::string username)
 {
