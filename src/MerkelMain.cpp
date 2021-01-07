@@ -74,26 +74,7 @@ void MerkelMain::printMarketStats()
         std::cout << "Asks seen: " << entries.size() << std::endl;
         std::cout << "Max ask: " << OrderBook::getHighPrice(entries) << std::endl;
         std::cout << "Min ask: " << OrderBook::getLowPrice(entries) << std::endl;
-
-
-
     }
-    // std::cout << "OrderBook contains :  " << orders.size() << " entries" << std::endl;
-    // unsigned int bids = 0;
-    // unsigned int asks = 0;
-    // for (OrderBookEntry& e : orders)
-    // {
-    //     if (e.orderType == OrderBookType::ask)
-    //     {
-    //         asks ++;
-    //     }
-    //     if (e.orderType == OrderBookType::bid)
-    //     {
-    //         bids ++;
-    //     }  
-    // }    
-    // std::cout << "OrderBook asks:  " << asks << " bids:" << bids << std::endl;
-
 }
 
 void MerkelMain::enterAsk()
@@ -278,14 +259,11 @@ void MerkelMain::processStartOption(int userOption)
     if (userOption == 1)
     {
         std::cout << "Entering user mode" << std::endl;
-        // MerkelMain app{};
-        // app.init();
         initUserMode();
     }
     if (userOption == 2)
     {
         std::cout << "Starting bot" << std::endl;
-        // MerkelBot botApp{};
         botApp.init();
     }
      

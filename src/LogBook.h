@@ -1,17 +1,19 @@
 #pragma once
-#include <string>
 #include <fstream>
+#include <string>
 
 class LogBook
 {
     public:
-
-    LogBook();
-    static void startLog();
+    /** Generic constructor */
+    LogBook();    
+    /**Stops logging */
     static void stopLog();
+    /**Function to write string to file */
     void write(std::string note);
 
     private:
+    static void startLog();
     static std::ofstream logFile;
 
 };

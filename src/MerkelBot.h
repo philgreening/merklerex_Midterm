@@ -9,7 +9,9 @@
 class MerkelBot
 {
     public:
+        /**Constructs orderbook*/
         MerkelBot(OrderBook& _orderBook);
+        /** Call to start bot*/
         void init();
 
     private:

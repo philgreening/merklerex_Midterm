@@ -31,26 +31,6 @@ std::vector<std::string> OrderBook::getKnownProducts()
 
     return products;
 }
-//possible remove
-// std::vector<std::string> OrderBook::getTimeStamp1()
-// {
-//     std::vector<std::string> timeFrame;
-
-//     std::map<std::string,bool> timeMap;
-
-//     for (OrderBookEntry& e : orders)
-//     {
-//         timeMap[e.timestamp] = true;
-//     }
-    
-//     // now flatten the map to a vector of strings
-//     for (auto const& e : timeMap)
-//     {
-//         timeFrame.push_back(e.first);
-//     }
-
-//     return timeFrame;
-// }
 
     /** return vector of Orders according to the sent filters*/
     std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type, 
@@ -96,10 +76,8 @@ double OrderBook::getAveragePrice(std::vector<OrderBookEntry>& orders)
 {
     double mean = orders[0].price;
     double sum = 0;
-    // std::string timeFrame = getTimeStamp1();
     for (OrderBookEntry& e : orders)
     {
-  
         sum += e.price;
         mean = sum / orders.size();
     }
@@ -166,13 +144,6 @@ std::string OrderBook::getEarliestTime()
     return orders[0].timestamp;
 }
 
-// std::vector<OrderBookEntry> OrderBook::getTimeStamp(std::string timestamp)
-// {
-//     //std::vector<OrderBookEntry> timestamp;
-//     std::cout << timestamp << std::endl;
-// }
-
-
 std::string OrderBook::getNextTime(std::string timestamp)
 {
     std::string next_timestamp = "";
@@ -195,9 +166,8 @@ void OrderBook::insertOrder(OrderBookEntry& order)
 {
     orders.push_back(order);
     std::sort(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp);
-    
-    // std::vector< std::vector<int> >::const_iterator it = std::find(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp);
-    // orders.insert(std::upper_bound(orders.begin(), orders.end(),order), order);
+    // possible solution to insert order in vector without needing to resort
+    // orders.insert(std::upper_bound(orders.begin(), order);
 }
 
 
@@ -295,7 +265,6 @@ std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std:
     //                 break
                     break;
                 }
-
 
     //             if bid.amount < ask.amount # bid is completely gone, slice the ask
                 if (bid.amount < ask.amount && 

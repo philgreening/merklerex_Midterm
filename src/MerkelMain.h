@@ -10,6 +10,7 @@
 class MerkelMain
 {
     public:
+        /**Generic constructor */
         MerkelMain();
         /** Call this to start the sim */
         void init();
@@ -37,6 +38,4 @@ class MerkelMain
         std::string currentTime;
         std::string username;
         MerkelBot botApp{orderBook};
-
-
 };
