@@ -74,7 +74,7 @@ double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
 
 double OrderBook::getAveragePrice(std::vector<OrderBookEntry>& orders)
 {
-    double mean = orders[0].price;
+    double mean; // = orders[0].price;
     double sum = 0;
     for (OrderBookEntry& e : orders)
     {
@@ -82,7 +82,37 @@ double OrderBook::getAveragePrice(std::vector<OrderBookEntry>& orders)
         mean = sum / orders.size();
     }
     return mean;
-    
+} 
+
+double OrderBook::getPrevAveragePrice(std::vector<OrderBookEntry>& orders)
+{
+    double mean;//= orders[0].price /orders.size();
+    double prevprice; 
+    double sum = 0;
+    for (OrderBookEntry& e : orders)
+    {
+        //double price1 = orders[e+1].price;
+        //sum += e.price;
+        sum += e.price;
+        mean = sum / orders.size();
+    }
+
+    // for (int i = 0; i <= orders.size(); i++)
+    // {
+    //     if (i == 0)
+    //     {
+    //         sum += orders[0].price;
+    //         mean = sum / orders.size();
+    //     }
+    //     else
+    //     {
+    //         sum += orders[i-1].price;
+    //         mean = sum / orders.size();
+    //     }
+              
+    // }
+
+    return mean;
 } 
 
 double OrderBook::getAverageAmount(std::vector<OrderBookEntry>& orders)
@@ -161,6 +191,27 @@ std::string OrderBook::getNextTime(std::string timestamp)
     }
     return next_timestamp;
 }
+
+std::string OrderBook::getPrevTime(std::string timestamp)
+{
+    std::string prev_timestamp = "";
+    for(int i = 1; i <= orders.size(); i++)
+    {
+  
+        if (orders[i-1].timestamp <  timestamp)
+        {
+            prev_timestamp = orders[i-1].timestamp;
+            
+        }
+    
+    if (prev_timestamp == "")
+    {
+        prev_timestamp = orders[0].timestamp;
+    }
+    }
+    return prev_timestamp;
+}
+
 
 void OrderBook::insertOrder(OrderBookEntry& order)
 {

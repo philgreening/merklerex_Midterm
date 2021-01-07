@@ -32,8 +32,8 @@ class MerkelMain
 
 
 
-        //OrderBook orderBook{"20200317.csv"};
-	    OrderBook orderBook{"20200601.csv"};
+        OrderBook orderBook{"20200317.csv"};
+	    //OrderBook orderBook{"20200601.csv"};
         Wallet wallet;
         std::string currentTime;
         std::string username;

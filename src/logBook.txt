@@ -1,20 +1,42 @@
 Wallet contains: 
 BTC : 10.000000
 
-0 ===== Current time: 2020/06/01 11:57:30.328127 =====
-BTC/USDT Average ask price: 9562.118063
-BTC/USDT Average bid price: 9521.653318
+0 ===== Current time: 2020/03/17 17:01:24.884492 =====
+
+
+
+2020/03/17 17:01:24.884492
+
+BTC/USDT Average ask price: 5394.803600
+BTC/USDT Average bid price: 5317.706285
+BTC/USDT Average previous bid price: 5317.706285
+average bid price gone up - sell 5317.706055 0.000000%
+
 DOGE/BTC Average ask price: 0.000001
 DOGE/BTC Average bid price: 0.000000
-DOGE/USDT Average ask price: 0.002657
-DOGE/USDT Average bid price: 0.002483
-ETH/BTC Average ask price: 0.024961
-ETH/BTC Average bid price: 0.024713
-ETH/USDT Average ask price: 238.329207
-ETH/USDT Average bid price: 235.516164
+DOGE/BTC Average previous bid price: 0.000000
+average bid price gone up - sell 0.000000 0.000000%
+
+DOGE/USDT Average ask price: 0.001853
+DOGE/USDT Average bid price: 0.001259
+DOGE/USDT Average previous bid price: 0.001259
+average bid price gone up - sell 0.001259 0.000000%
+
+ETH/BTC Average ask price: 0.022074
+ETH/BTC Average bid price: 0.021773
+ETH/BTC Average previous bid price: 0.021773
+average bid price gone up - sell 0.021773 0.000000%
+
+ETH/USDT Average ask price: 119.501478
+ETH/USDT Average bid price: 115.210721
+ETH/USDT Average previous bid price: 115.210721
+average bid price gone up - sell 115.210724 0.000000%
+
+
+
  MerkelBot:: get ask: Product: BTC/USDT
 Ask:: Wallet looks good .
-Place ask: BTC/USDT ask price: 9521.653318 ask amount: 0.604994
+Place ask: BTC/USDT ask price: 5317.706285 ask amount: 0.673622
  MerkelBot:: get ask: Product: DOGE/BTC
 Ask:: Wallet has insufficient funds.
  MerkelBot:: get ask: Product: DOGE/USDT
@@ -27,3 +49,561 @@ Ask:: Wallet has insufficient funds.
 Bid:: Wallet has insufficient funds.
  MerkelBot:: get bid: Product: DOGE/BTC
 Bid:: Wallet looks good .
+Place bid: DOGE/BTC bid price: 0.000001 bid amount: 13018589.614979
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022074 bid amount: 18.887870
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet has insufficient funds.
+Matching: BTC/USDT
+Sales: 1
+Sale price: 5317.706285 amount: 0.673622
+Matching: DOGE/BTC
+Sales: 2
+Sale price: 0.000000 amount: 11901419.525460
+Sale price: 0.000000 amount: 1117170.089519
+Matching: DOGE/USDT
+Sales: 0
+Matching: ETH/BTC
+Sales: 2
+Sale price: 0.021891 amount: 9.804922
+Sale price: 0.021891 amount: 9.082948
+Matching: ETH/USDT
+Sales: 0
+
+Going to next time frame: 2020/03/17 17:01:30.099017
+Wallet contains: 
+BTC : 4.865971
+DOGE : 13018589.614979
+ETH : 18.887870
+USDT : 3582.121395
+
+1 ===== Current time: 2020/03/17 17:01:30.099017 =====
+
+
+
+2020/03/17 17:01:24.884492
+
+BTC/USDT Average ask price: 5394.370529
+BTC/USDT Average bid price: 5318.065997
+BTC/USDT Average previous bid price: 5317.706285
+average bid price gone up - sell 5318.065918 -0.000000%
+
+DOGE/BTC Average ask price: 0.000001
+DOGE/BTC Average bid price: 0.000000
+DOGE/BTC Average previous bid price: 0.000000
+ 
+average bid price gone down - buy 0.000000 8.000000%
+DOGE/USDT Average ask price: 0.001853
+DOGE/USDT Average bid price: 0.001228
+DOGE/USDT Average previous bid price: 0.001259
+ 
+average bid price gone down - buy 0.001259 2.000000%
+ETH/BTC Average ask price: 0.022058
+ETH/BTC Average bid price: 0.021774
+ETH/BTC Average previous bid price: 0.021779
+ 
+average bid price gone down - buy 0.021779 0.000000%
+ETH/USDT Average ask price: 119.442406
+ETH/USDT Average bid price: 115.374223
+ETH/USDT Average previous bid price: 115.210721
+average bid price gone up - sell 115.374222 -0.000000%
+
+
+
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 5318.065997 ask amount: 0.536860
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.001228 ask amount: 126310.019419
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.001841 bid amount: 21666.194932
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022058 bid amount: 22.628729
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet looks good .
+Place bid: ETH/USDT bid price: 119.442406 bid amount: 23.928435
+Matching: BTC/USDT
+Sales: 3
+Sale price: 5318.065997 amount: 0.030816
+Sale price: 5318.065997 amount: 0.497376
+Sale price: 5318.065997 amount: 0.008667
+Matching: DOGE/BTC
+Sales: 0
+Matching: DOGE/USDT
+Sales: 5
+Sale price: 0.001228 amount: 21666.194932
+Sale price: 0.001228 amount: 24434.152275
+Sale price: 0.001228 amount: 10537.806878
+Sale price: 0.001228 amount: 657.569630
+Sale price: 0.001228 amount: 69014.295704
+Matching: ETH/BTC
+Sales: 4
+Sale price: 0.021891 amount: 9.804922
+Sale price: 0.021891 amount: 3.432374
+Sale price: 0.021891 amount: 9.140303
+Sale price: 0.021891 amount: 0.251130
+Matching: ETH/USDT
+Sales: 2
+Sale price: 117.329244 amount: 3.502494
+Sale price: 117.413279 amount: 20.425941
+
+Going to next time frame: 2020/03/17 17:01:35.103526
+Wallet contains: 
+BTC : 3.833747
+DOGE : 12892279.595560
+ETH : 65.445034
+USDT : 3783.079260
+
+2 ===== Current time: 2020/03/17 17:01:35.103526 =====
+
+
+
+2020/03/17 17:01:30.099017
+
+BTC/USDT Average ask price: 5398.160885
+BTC/USDT Average bid price: 5316.835949
+BTC/USDT Average previous bid price: 5318.065997
+ 
+average bid price gone down - buy 5318.065918 0.000000%
+DOGE/BTC Average ask price: 0.000001
+DOGE/BTC Average bid price: 0.000000
+DOGE/BTC Average previous bid price: 0.000000
+average bid price gone up - sell 0.000000 0.000000%
+
+DOGE/USDT Average ask price: 0.001853
+DOGE/USDT Average bid price: 0.001259
+DOGE/USDT Average previous bid price: 0.001240
+average bid price gone up - sell 0.001259 -2.000000%
+
+ETH/BTC Average ask price: 0.022097
+ETH/BTC Average bid price: 0.021784
+ETH/BTC Average previous bid price: 0.021780
+average bid price gone up - sell 0.021784 -0.000000%
+
+ETH/USDT Average ask price: 119.311064
+ETH/USDT Average bid price: 115.540959
+ETH/USDT Average previous bid price: 115.453991
+average bid price gone up - sell 115.540962 -0.000000%
+
+
+
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 5316.835949 ask amount: 0.663761
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.001259 ask amount: 133130.505565
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet looks good .
+Place ask: ETH/BTC ask price: 0.021784 ask amount: 15.442219
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet looks good .
+Place ask: ETH/USDT ask price: 115.540959 ask amount: 36.710973
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.001842 bid amount: 23750.364360
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022091 bid amount: 21.664197
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet looks good .
+Place bid: ETH/USDT bid price: 119.237140 bid amount: 24.089346
+Matching: BTC/USDT
+Sales: 2
+Sale price: 5316.835949 amount: 0.497508
+Sale price: 5316.835949 amount: 0.166253
+Matching: DOGE/BTC
+Sales: 0
+Matching: DOGE/USDT
+Sales: 2
+Sale price: 0.001259 amount: 23750.364360
+Sale price: 0.001259 amount: 109380.141205
+Matching: ETH/BTC
+Sales: 2
+Sale price: 0.021784 amount: 15.442219
+Sale price: 0.021891 amount: 6.221977
+Matching: ETH/USDT
+Sales: 3
+Sale price: 115.540959 amount: 24.089346
+Sale price: 115.540959 amount: 10.683774
+Sale price: 115.540959 amount: 1.937852
+
+Going to next time frame: 2020/03/17 17:01:40.107326
+Wallet contains: 
+BTC : 3.370179
+DOGE : 12759149.089994
+ETH : 19.513819
+USDT : 11721.396335
+
+3 ===== Current time: 2020/03/17 17:01:40.107326 =====
+
+
+
+2020/03/17 17:01:35.103526
+
+BTC/USDT Average ask price: 5394.800458
+BTC/USDT Average bid price: 5319.445910
+BTC/USDT Average previous bid price: 5316.835949
+average bid price gone up - sell 5319.445801 -0.000000%
+
+DOGE/BTC Average ask price: 0.000001
+DOGE/BTC Average bid price: 0.000000
+DOGE/BTC Average previous bid price: 0.000000
+average bid price gone up - sell 0.000000 0.000000%
+
+DOGE/USDT Average ask price: 0.001853
+DOGE/USDT Average bid price: 0.001259
+DOGE/USDT Average previous bid price: 0.001270
+ 
+average bid price gone down - buy 0.001270 1.000000%
+ETH/BTC Average ask price: 0.022084
+ETH/BTC Average bid price: 0.021787
+ETH/BTC Average previous bid price: 0.021790
+ 
+average bid price gone down - buy 0.021790 0.000000%
+ETH/USDT Average ask price: 119.611443
+ETH/USDT Average bid price: 115.391939
+ETH/USDT Average previous bid price: 115.613433
+ 
+average bid price gone down - buy 115.613434 0.000000%
+
+
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 5319.445910 ask amount: 0.667422
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.001259 ask amount: 133128.115511
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet looks good .
+Place ask: ETH/BTC ask price: 0.021787 ask amount: 15.521913
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet looks good .
+Place bid: BTC/USDT bid price: 5393.322918 bid amount: 0.792291
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.001842 bid amount: 23734.830491
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022078 bid amount: 18.379470
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet looks good .
+Place bid: ETH/USDT bid price: 119.611443 bid amount: 21.151460
+Matching: BTC/USDT
+Sales: 3
+Sale price: 5319.445910 amount: 0.667422
+Sale price: 5360.143234 amount: 0.008381
+Sale price: 5362.105979 amount: 0.116488
+Matching: DOGE/BTC
+Sales: 0
+Matching: DOGE/USDT
+Sales: 4
+Sale price: 0.001259 amount: 23734.830491
+Sale price: 0.001259 amount: 24426.401013
+Sale price: 0.001259 amount: 10561.521806
+Sale price: 0.001259 amount: 74405.362201
+Matching: ETH/BTC
+Sales: 2
+Sale price: 0.021787 amount: 15.521913
+Sale price: 0.021891 amount: 2.857557
+Matching: ETH/USDT
+Sales: 1
+Sale price: 117.440000 amount: 21.151460
+
+Going to next time frame: 2020/03/17 17:01:45.111661
+Wallet contains: 
+BTC : 3.103241
+DOGE : 12626020.974483
+ETH : 28.000923
+USDT : 12285.729032
+
+4 ===== Current time: 2020/03/17 17:01:45.111661 =====
+
+
+
+2020/03/17 17:01:40.107326
+
+BTC/USDT Average ask price: 5398.785991
+BTC/USDT Average bid price: 5319.928681
+BTC/USDT Average previous bid price: 5320.894479
+ 
+average bid price gone down - buy 5320.894531 0.000000%
+DOGE/BTC Average ask price: 0.000001
+DOGE/BTC Average bid price: 0.000000
+DOGE/BTC Average previous bid price: 0.000000
+average bid price gone up - sell 0.000000 0.000000%
+
+DOGE/USDT Average ask price: 0.001853
+DOGE/USDT Average bid price: 0.001228
+DOGE/USDT Average previous bid price: 0.001270
+ 
+average bid price gone down - buy 0.001270 3.000000%
+ETH/BTC Average ask price: 0.022098
+ETH/BTC Average bid price: 0.021794
+ETH/BTC Average previous bid price: 0.021792
+average bid price gone up - sell 0.021794 -0.000000%
+
+ETH/USDT Average ask price: 119.400768
+ETH/USDT Average bid price: 115.492195
+ETH/USDT Average previous bid price: 115.474674
+average bid price gone up - sell 115.492195 -0.000000%
+
+
+
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 5319.928681 ask amount: 0.618451
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.001228 ask amount: 133621.329996
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet looks good .
+Place ask: ETH/BTC ask price: 0.021794 ask amount: 14.675824
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet looks good .
+Place bid: BTC/USDT bid price: 5397.239769 bid amount: 0.710834
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.001841 bid amount: 25613.082105
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022092 bid amount: 21.513808
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet looks good .
+Place bid: ETH/USDT bid price: 119.400768 bid amount: 24.967018
+Matching: BTC/USDT
+Sales: 3
+Sale price: 5319.928681 amount: 0.618451
+Sale price: 5366.736657 amount: 0.053618
+Sale price: 5366.906670 amount: 0.038765
+Matching: DOGE/BTC
+Sales: 0
+Matching: DOGE/USDT
+Sales: 2
+Sale price: 0.001228 amount: 25613.082105
+Sale price: 0.001228 amount: 108008.247891
+Matching: ETH/BTC
+Sales: 2
+Sale price: 0.021794 amount: 14.675824
+Sale price: 0.021900 amount: 6.837984
+Matching: ETH/USDT
+Sales: 1
+Sale price: 117.488567 amount: 24.967018
+
+Going to next time frame: 2020/03/17 17:01:50.116610
+Wallet contains: 
+BTC : 2.747263
+DOGE : 12492399.644487
+ETH : 45.130101
+USDT : 12310.804694
+
+5 ===== Current time: 2020/03/17 17:01:50.116610 =====
+
+
+
+2020/03/17 17:01:45.111661
+
+BTC/USDT Average ask price: 5401.926538
+BTC/USDT Average bid price: 5321.742942
+BTC/USDT Average previous bid price: 5321.444585
+average bid price gone up - sell 5321.743164 -0.000000%
+
+DOGE/BTC Average ask price: 0.000001
+DOGE/BTC Average bid price: 0.000000
+DOGE/BTC Average previous bid price: 0.000000
+average bid price gone up - sell 0.000000 0.000000%
+
+DOGE/USDT Average ask price: 0.001846
+DOGE/USDT Average bid price: 0.001259
+DOGE/USDT Average previous bid price: 0.001240
+average bid price gone up - sell 0.001259 -2.000000%
+
+ETH/BTC Average ask price: 0.022074
+ETH/BTC Average bid price: 0.021797
+ETH/BTC Average previous bid price: 0.021800
+ 
+average bid price gone down - buy 0.021800 0.000000%
+ETH/USDT Average ask price: 119.085213
+ETH/USDT Average bid price: 115.338233
+ETH/USDT Average previous bid price: 115.568834
+ 
+average bid price gone down - buy 115.568832 0.000000%
+
+
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 5321.742942 ask amount: 0.684563
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.001259 ask amount: 133111.902012
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet looks good .
+Place ask: ETH/BTC ask price: 0.021797 ask amount: 15.149363
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet looks good .
+Place ask: ETH/USDT ask price: 115.338233 ask amount: 36.625838
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet looks good .
+Place bid: BTC/USDT bid price: 5400.354311 bid amount: 0.665550
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.001834 bid amount: 25587.892668
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022068 bid amount: 22.262577
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet looks good .
+Place bid: ETH/USDT bid price: 119.011743 bid amount: 24.098406
+Matching: BTC/USDT
+Sales: 3
+Sale price: 5321.742942 amount: 0.665550
+Sale price: 5321.742942 amount: 0.007781
+Sale price: 5321.742942 amount: 0.011232
+Matching: DOGE/BTC
+Sales: 0
+Matching: DOGE/USDT
+Sales: 2
+Sale price: 0.001259 amount: 25587.892668
+Sale price: 0.001259 amount: 107524.009344
+Matching: ETH/BTC
+Sales: 2
+Sale price: 0.021797 amount: 15.149363
+Sale price: 0.021900 amount: 7.113213
+Matching: ETH/USDT
+Sales: 2
+Sale price: 115.338233 amount: 24.098406
+Sale price: 115.338233 amount: 12.527433
+
+Going to next time frame: 2020/03/17 17:01:55.120438
+Wallet contains: 
+BTC : 2.237134
+DOGE : 12359287.742476
+ETH : 0.468113
+USDT : 20345.802285
+
+6 ===== Current time: 2020/03/17 17:01:55.120438 =====
+
+
+
+2020/03/17 17:01:50.116610
+
+BTC/USDT Average ask price: 5390.673648
+BTC/USDT Average bid price: 5314.299159
+BTC/USDT Average previous bid price: 5323.284341
+ 
+average bid price gone down - buy 5323.284180 0.000000%
+DOGE/BTC Average ask price: 0.000001
+DOGE/BTC Average bid price: 0.000000
+DOGE/BTC Average previous bid price: 0.000000
+average bid price gone up - sell 0.000000 0.000000%
+
+DOGE/USDT Average ask price: 0.001846
+DOGE/USDT Average bid price: 0.001196
+DOGE/USDT Average previous bid price: 0.001270
+ 
+average bid price gone down - buy 0.001270 6.000000%
+ETH/BTC Average ask price: 0.022087
+ETH/BTC Average bid price: 0.021792
+ETH/BTC Average previous bid price: 0.021802
+ 
+average bid price gone down - buy 0.021802 0.000000%
+ETH/USDT Average ask price: 119.259328
+ETH/USDT Average bid price: 115.413369
+ETH/USDT Average previous bid price: 115.410263
+average bid price gone up - sell 115.413368 -0.000000%
+
+
+
+ MerkelBot:: get ask: Product: BTC/USDT
+Ask:: Wallet looks good .
+Place ask: BTC/USDT ask price: 5314.299159 ask amount: 0.566192
+ MerkelBot:: get ask: Product: DOGE/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: DOGE/USDT
+Ask:: Wallet looks good .
+Place ask: DOGE/USDT ask price: 0.001196 ask amount: 126915.164144
+ MerkelBot:: get ask: Product: ETH/BTC
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get ask: Product: ETH/USDT
+Ask:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: BTC/USDT
+Bid:: Wallet looks good .
+Place bid: BTC/USDT bid price: 5389.176109 bid amount: 0.569129
+ MerkelBot:: get bid: Product: DOGE/BTC
+Bid:: Wallet has insufficient funds.
+ MerkelBot:: get bid: Product: DOGE/USDT
+Bid:: Wallet looks good .
+Place bid: DOGE/USDT bid price: 0.001833 bid amount: 25460.997184
+ MerkelBot:: get bid: Product: ETH/BTC
+Bid:: Wallet looks good .
+Place bid: ETH/BTC bid price: 0.022087 bid amount: 20.270229
+ MerkelBot:: get bid: Product: ETH/USDT
+Bid:: Wallet looks good .
+Place bid: ETH/USDT bid price: 119.259328 bid amount: 23.792565
+Matching: BTC/USDT
+Sales: 2
+Sale price: 5314.299159 amount: 0.566192
+Sale price: 5363.697913 amount: 0.002936
+Matching: DOGE/BTC
+Sales: 0
+Matching: DOGE/USDT
+Sales: 4
+Sale price: 0.001196 amount: 25460.997184
+Sale price: 0.001196 amount: 10499.859814
+Sale price: 0.001196 amount: 657.569630
+Sale price: 0.001196 amount: 90296.737516
+Matching: ETH/BTC
+Sales: 4
+Sale price: 0.021900 amount: 9.804922
+Sale price: 0.021900 amount: 3.481458
+Sale price: 0.021900 amount: 0.040000
+Sale price: 0.021904 amount: 6.943849
+Matching: ETH/USDT
+Sales: 1
+Sale price: 117.446091 amount: 23.792565
+
+Going to next time frame: 2020/03/17 17:02:00.124758
+Wallet contains: 
+BTC : 1.229933
+DOGE : 12232372.578331
+ETH : 44.530907
+USDT : 20696.417580
+

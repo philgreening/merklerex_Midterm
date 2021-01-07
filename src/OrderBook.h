@@ -3,6 +3,7 @@
 #include "CSVReader.h"
 #include <string>
 #include <vector>
+#include "logBook.h"
 
 class OrderBook
 {
@@ -27,6 +28,9 @@ class OrderBook
          * If there is no next timestamp, wraps around to the start
          * */
         std::string getNextTime(std::string timestamp);
+
+        std::string getPrevTime(std::string timestamp);
+
     /** inserts new order into orderbook */    
         void insertOrder(OrderBookEntry& order);
     /** matching engine to work match orders*/
@@ -38,6 +42,8 @@ class OrderBook
         static double getLowPrice(std::vector<OrderBookEntry>& orders);
     /** works out and returns average price of currency from a vector of orders */
         static double getAveragePrice(std::vector<OrderBookEntry>& orders);
+    /** works out previous timestamp average amount of currency from a vector of orders */
+         static double getPrevAveragePrice(std::vector<OrderBookEntry>& orders);
     /** works out average amount of currency from a vector of orders */
         static double getAverageAmount(std::vector<OrderBookEntry>& orders);
 
@@ -46,6 +52,7 @@ class OrderBook
     private:
         std::vector<OrderBookEntry> orders;
         //double emaArray = orders[0].price;
+        //LogBook logBook;
 
 
 

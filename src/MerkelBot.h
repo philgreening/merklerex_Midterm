@@ -31,6 +31,7 @@ class MerkelBot
         OrderBook& orderBook;
         Wallet wallet;
         std::string currentTime;
+        std::string previousTime;
         std::string username;
         LogBook logBook;
 
