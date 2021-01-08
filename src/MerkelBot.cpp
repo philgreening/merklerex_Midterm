@@ -19,22 +19,23 @@ void MerkelBot::init()
    
     while(currentTime <  orderBook.getNextTime(currentTime))
     {
-        logBook.write(std::to_string(count) + " ===== " + "Current time: "+ currentTime + " =====");
+        logBook.write( "=====Current time: " + currentTime + " =====" "\n" "Timeframe number: "+ std::to_string(count) + "\n");
+        logBook.write("*****Market Stats*****");
         predictFuture();
+        logBook.write("\n" "*****Getting bids and Asks*****");
         getAsk();
         getBid();
+        logBook.write("\n" "*****Matching orders*****");
         gotoNextTimeframe();
         printWallet();
         count ++;
-        //std::cout << count << std::endl;
-        
+
     }
     logBook.stopLog();
 }
 
 void MerkelBot::predictFuture()
 {
-    logBook.write("\n");
     previousTime = orderBook.getPrevTime(currentTime);
     logBook.write("\n" + previousTime + "\n");
 
@@ -46,41 +47,35 @@ void MerkelBot::predictFuture()
                                                                 p, currentTime);
         std::vector<OrderBookEntry> entries1 = orderBook.getOrders(OrderBookType::bid, 
                                                                 p, currentTime);
-        std::vector<OrderBookEntry> prevEntries = orderBook.getOrders(OrderBookType::bid, 
+        std::vector<OrderBookEntry> prevEntriesBid = orderBook.getOrders(OrderBookType::bid, 
                                                                 p, previousTime);
+        std::vector<OrderBookEntry> prevEntriesAsk = orderBook.getOrders(OrderBookType::ask, 
+                                                                p, previousTime);                                                        
 
-        // std::cout << "Asks seen: " << entries.size() << std::endl;
-        std::cout << "Average ask price: " << OrderBook::getAveragePrice(entries) << std::endl;
-        logBook.write( p + " Average ask price: "+ std::to_string(OrderBook::getAveragePrice(entries)));
-        std::cout << "Average ask amount: " << OrderBook::getAverageAmount(entries) << std::endl;
-        std::cout << "Average bid price: " << OrderBook::getAveragePrice(entries1) << std::endl;
+        logBook.write("Asks seen: " + std::to_string(entries.size()));
+        logBook.write("Bids seen: " + std::to_string(entries1.size()));
+     
+        logBook.write("\n" + p + " Average ask price: "+ std::to_string(OrderBook::getAveragePrice(entries)));
+        logBook.write( p + " Average previous ask price: "+ std::to_string(OrderBook::getPrevAveragePrice(prevEntriesAsk)));
+
         logBook.write( p + " Average bid price: "+ std::to_string(OrderBook::getAveragePrice(entries1)));
-        std::cout << "Average bid amount: " << OrderBook::getAverageAmount(entries1) << std::endl;
-        //std::cout << "ema: " << OrderBook::getEMA(entries1) << std::endl;
-
-        std::cout << "Average previous bid price: " << OrderBook::getPrevAveragePrice(prevEntries) << std::endl;
-        logBook.write( p + " Average previous bid price: "+ std::to_string(OrderBook::getPrevAveragePrice(prevEntries)));
-        double previousBidPrice = OrderBook::getAveragePrice(prevEntries);
+        logBook.write( p + " Average previous bid price: "+ std::to_string(OrderBook::getPrevAveragePrice(prevEntriesBid)));
+        
+        double previousBidPrice = OrderBook::getAveragePrice(prevEntriesBid);
         double bidPrice = OrderBook::getAveragePrice(entries1);
+        double previousAskPrice = OrderBook::getAveragePrice(prevEntriesAsk);
+        double askPrice = OrderBook::getAveragePrice(entries);
         double percent = (previousBidPrice - bidPrice) / previousBidPrice * 100 ;
         percent = std::round(percent);
         if (bidPrice < previousBidPrice)
         {
-             logBook.write( " \n" "average bid price gone down - buy " + std::to_string(previousBidPrice) + " " + std::to_string(percent) + "%" );
+             logBook.write( "*****" "Average bid price gone down - buy at: " + std::to_string(bidPrice) + " " + std::to_string(percent) + "%" "\n" );
         }
-        else
+        else if (askPrice > previousAskPrice)
         {
-            logBook.write( "average bid price gone up - sell "   + std::to_string(bidPrice) + " " + std::to_string(percent) + "%" + "\n");
+            logBook.write("*****" "Average ask price gone up - sell at: "   + std::to_string(askPrice) + " " + std::to_string(percent) + "%" + "\n");
         }
-        
-      
-        
-
-
-        // std::cout << "Max ask: " << OrderBook::getHighPrice(entries) << std::endl;
-        // std::cout << "Min ask: " << OrderBook::getLowPrice(entries) << std::endl;
     }
-    logBook.write("\n");
 }
 
 void MerkelBot::getBid()
@@ -88,18 +83,24 @@ void MerkelBot::getBid()
 
     for (std::string const& p : orderBook.getKnownProducts())
     {
-        //TODO: prediction algorithm
-        //std::cout << "Product: " << p << std::endl;
-        logBook.write(" MerkelBot:: get bid: Product: " + p );
+
+        logBook.write("MerkelBot:: get bid: Product: " + p );
         std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::ask, 
                                                                 p, currentTime);
+        std::vector<OrderBookEntry> bidEntries = orderBook.getOrders(OrderBookType::bid, 
+                                                                p, currentTime);
+        std::vector<OrderBookEntry> prevBidEntries = orderBook.getOrders(OrderBookType::bid, 
+                                                                    p, previousTime);                                                           
         double bidPrice = OrderBook::getAveragePrice(entries);
-        double bidPricePrev = OrderBook::getPrevAveragePrice(entries);
+        double prevBidAvePrice = OrderBook::getAveragePrice(prevBidEntries);
+        double BidAvePrice = OrderBook::getAveragePrice(bidEntries);
+
         double bidAmount = OrderBook::getAverageAmount(entries);
 
-        //if (bidPrice < currentTime.price )
-        submitBid(p, bidPrice, bidAmount);
-        //logBook.write("Bid submitted: " + p + " Price: " + std::to_string(bidPrice)  + " Amount: " + std::to_string(1));
+        if (BidAvePrice < prevBidAvePrice)
+        {
+            submitBid(p, bidPrice, bidAmount);
+        }
     }
 }
 
@@ -122,34 +123,36 @@ void MerkelBot::submitBid(std::string product, double price, double amount)
             logBook.write("Place bid: "  + product + " bid price: " + std::to_string(price) + " bid amount: " + std::to_string(amount));
         }
         else {
-            //std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
             logBook.write("Bid:: Wallet has insufficient funds." );
-
         }
     }catch (const std::exception& e)
     {
-        //std::cout << "MerkelBot::submitBid Bad Input." << std::endl;
         logBook.write("MerkelBot::submitBid Bad Input." );
-
     }   
 }
 
 void MerkelBot::getAsk()
 {
-
     for (std::string const& p : orderBook.getKnownProducts())
     {
-        //TODO: prediction algorithm
-        //std::cout << "Product: " << p << std::endl;
-        logBook.write(" MerkelBot:: get ask: Product: " + p );
+        logBook.write("MerkelBot:: get ask: Product: " + p );
         std::vector<OrderBookEntry> entries = orderBook.getOrders(OrderBookType::bid, 
                                                                 p, currentTime);
+        std::vector<OrderBookEntry> askEntries = orderBook.getOrders(OrderBookType::ask, 
+                                                                p, currentTime);
+        std::vector<OrderBookEntry> prevAskEntries = orderBook.getOrders(OrderBookType::ask, 
+                                                                    p, previousTime);    
+                            
         double askPrice = OrderBook::getAveragePrice(entries);
         double askAmount = OrderBook::getAverageAmount(entries);
 
-        submitAsk(p, askPrice, askAmount);
-        //logBook.write("Ask submitted: " + p + " Price: " + std::to_string(askPrice)  + " Amount: " + std::to_string(1));
+        double prevAskAvePrice = OrderBook::getAveragePrice(prevAskEntries);
+        double askAvePrice = OrderBook::getAveragePrice(askEntries);
 
+        if (askAvePrice > prevAskAvePrice)
+        {
+            submitAsk(p, askPrice, askAmount);
+        }
     }
 }
 
@@ -170,7 +173,6 @@ void MerkelBot::submitAsk(std::string product, double price, double amount)
             logBook.write("Ask:: Wallet looks good ." );
             orderBook.insertOrder(obe);
             logBook.write("Place ask: "  + product + " ask price: " + std::to_string(price) + " ask amount: " + std::to_string(amount));
-
         }
         else {
             //std::cout << "Wallet has insufficient funds to accomodate bid." << std::endl;
@@ -185,7 +187,6 @@ void MerkelBot::submitAsk(std::string product, double price, double amount)
 
 void MerkelBot::gotoNextTimeframe()
 {
-    std::cout << "Going to next time frame. " << std::endl;
     for (std::string p : orderBook.getKnownProducts())
     {
         std::cout << "matching " << p << std::endl;
@@ -207,7 +208,7 @@ void MerkelBot::gotoNextTimeframe()
 
     currentTime = orderBook.getNextTime(currentTime);
     std::cout << currentTime << std::endl;
-    logBook.write("\n" "Going to next time frame: " + currentTime);
+    logBook.write("\n" "Going to next time frame: " + currentTime + "\n");
 }
 
 void MerkelBot::printWallet()
