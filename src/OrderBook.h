@@ -17,10 +17,6 @@ class OrderBook
                                               std::string product, 
                                               std::string timestamp);
 
-        // std::vector<std::string> getTimeStamp(std::string timestamp);
-        // std::vector<std::string> getTimeStamp1();
-
-
         /** returns the earliest time in the orderbook*/
         std::string getEarliestTime();
         /** returns the next time after the 
@@ -28,11 +24,13 @@ class OrderBook
          * If there is no next timestamp, wraps around to the start
          * */
         std::string getNextTime(std::string timestamp);
-
+        /** recieves the current timestampo and returns the previous timestamp */
         std::string getPrevTime(std::string timestamp);
 
     /** inserts new order into orderbook */    
         void insertOrder(OrderBookEntry& order);
+    /** withdraws order from orderbook */    
+        void withdrawOrder(OrderBookEntry& order);
     /** matching engine to work match orders*/
         std::vector<OrderBookEntry> matchAsksToBids(std::string product, std::string timestamp, std::string username);
 
@@ -42,18 +40,9 @@ class OrderBook
         static double getLowPrice(std::vector<OrderBookEntry>& orders);
     /** works out and returns average price of currency from a vector of orders */
         static double getAveragePrice(std::vector<OrderBookEntry>& orders);
-    /** works out previous timestamp average amount of currency from a vector of orders */
-         static double getPrevAveragePrice(std::vector<OrderBookEntry>& orders);
     /** works out average amount of currency from a vector of orders */
         static double getAverageAmount(std::vector<OrderBookEntry>& orders);
-
-        //static double getEMA(std::vector<OrderBookEntry>& orders);
         
     private:
         std::vector<OrderBookEntry> orders;
-        //double emaArray = orders[0].price;
-        //LogBook logBook;
-
-
-
 };

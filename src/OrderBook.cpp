@@ -74,44 +74,15 @@ double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
 
 double OrderBook::getAveragePrice(std::vector<OrderBookEntry>& orders)
 {
-    double mean; // = orders[0].price;
+    double mean; 
     double sum = 0;
+    
+    //returns the average price in timestamp
     for (OrderBookEntry& e : orders)
     {
         sum += e.price;
         mean = sum / orders.size();
     }
-    return mean;
-} 
-
-double OrderBook::getPrevAveragePrice(std::vector<OrderBookEntry>& orders)
-{
-    double mean;//= orders[0].price /orders.size();
-    double prevprice; 
-    double sum = 0;
-    for (OrderBookEntry& e : orders)
-    {
-        //double price1 = orders[e+1].price;
-        //sum += e.price;
-        sum += e.price;
-        mean = sum / orders.size();
-    }
-
-    // for (int i = 0; i <= orders.size(); i++)
-    // {
-    //     if (i == 0)
-    //     {
-    //         sum += orders[0].price;
-    //         mean = sum / orders.size();
-    //     }
-    //     else
-    //     {
-    //         sum += orders[i-1].price;
-    //         mean = sum / orders.size();
-    //     }
-              
-    // }
-
     return mean;
 } 
 
@@ -119,55 +90,15 @@ double OrderBook::getAverageAmount(std::vector<OrderBookEntry>& orders)
 {
     double mean = orders[0].amount;
     double sum = 0;
+    
+    //returns the average amount in timestamp
     for (OrderBookEntry& e : orders)
     {
-      
         sum += e.amount;
         mean = sum / orders.size();
     }
     return mean;
 }
-
-// double OrderBook::getEMA(std::vector<OrderBookEntry>& orders)
-// {
-//     //double lastEMA = getAveragePrice(orders); 
-//     double range = 100;
-//     double k = 2/(range + 1);
-//     double emaPrice = 0;
-//     std::vector<OrderBookEntry> emaArray;
-
-//     for (OrderBookEntry& e : orders)
-//     {
-//         emaPrice = (e.price - emaArray[e.price - 1]) * k) + emaArray[e.price -1];
-//         emaArray.push_back(emaPrice);
-//     }
-//     return emaArray;
-
-// }
-
-
-// double OrderBook::getEMA(std::vector<OrderBookEntry>& orders))
-// {
-// 	static double factor = 0;
-// 	static double lag = 0;
-// 	static double lastema = 0;
-// 	double ema;
-
-// 	if( <= 1)
-// 	{
-// 		ema = vals[0];
-// 		factor = 2.0 / (((float) numVals) + 1.0);
-// 		lag = (numVals - 1) / 2;
-// 	}
-// 	else
-// 	{
-// 		ema = (factor * ((2.0 * vals[0]) - vals[lag])) + 
-// 			((1.0 - factor) * lastema);
-// 		lastema = ema;
-// 	}
-
-// 	return ema;
-// }
 
 std::string OrderBook::getEarliestTime()
 {
@@ -195,6 +126,7 @@ std::string OrderBook::getNextTime(std::string timestamp)
 std::string OrderBook::getPrevTime(std::string timestamp)
 {
     std::string prev_timestamp = "";
+    
     for(int i = 1; i <= orders.size(); i++)
     {
   
@@ -221,6 +153,10 @@ void OrderBook::insertOrder(OrderBookEntry& order)
     // orders.insert(std::upper_bound(orders.begin(), order);
 }
 
+void OrderBook::withdrawOrder(OrderBookEntry& order)
+{
+    orders.pop_back();
+}
 
 std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp, std::string username)
 {
