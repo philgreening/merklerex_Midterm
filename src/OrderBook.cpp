@@ -153,11 +153,6 @@ void OrderBook::insertOrder(OrderBookEntry& order)
     // orders.insert(std::upper_bound(orders.begin(), order);
 }
 
-void OrderBook::withdrawOrder(OrderBookEntry& order)
-{
-    orders.pop_back();
-}
-
 std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp, std::string username)
 {
 // asks = orderbook.asks

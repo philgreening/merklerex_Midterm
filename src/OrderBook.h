@@ -29,8 +29,7 @@ class OrderBook
 
     /** inserts new order into orderbook */    
         void insertOrder(OrderBookEntry& order);
-    /** withdraws order from orderbook */    
-        void withdrawOrder(OrderBookEntry& order);
+
     /** matching engine to work match orders*/
         std::vector<OrderBookEntry> matchAsksToBids(std::string product, std::string timestamp, std::string username);
 
