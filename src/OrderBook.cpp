@@ -149,8 +149,6 @@ void OrderBook::insertOrder(OrderBookEntry& order)
 {
     orders.push_back(order);
     std::sort(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp);
-    // possible solution to insert order in vector without needing to resort
-    // orders.insert(std::upper_bound(orders.begin(), order);
 }
 
 std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp, std::string username)

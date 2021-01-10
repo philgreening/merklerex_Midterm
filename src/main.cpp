@@ -6,6 +6,4 @@ int main()
 {   
     MerkelMain app{};
     app.init();
-    // StartMenu startMenu{};
-    // startMenu.init();
 }
