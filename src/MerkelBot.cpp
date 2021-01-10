@@ -1,7 +1,6 @@
 #include "MerkelBot.h"
 #include <iostream>
 #include <cmath>
-#include <chrono>
 
 MerkelBot::MerkelBot(OrderBook& _orderBook)
 : orderBook(_orderBook)
@@ -11,8 +10,6 @@ MerkelBot::MerkelBot(OrderBook& _orderBook)
 
 void MerkelBot::init()
 {
-    auto start = std::chrono::steady_clock::now();
-
     currentTime = orderBook.getEarliestTime();
     wallet.insertCurrency("BTC", 10);
     //count of timestamps
@@ -38,10 +35,6 @@ void MerkelBot::init()
         count ++;
     }
     logBook.stopLog();
-    auto end = std::chrono::steady_clock::now();
-    std::cout << "Elapsed time in nanoseconds : "<< std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count()
-        << " ns" << std::endl;
-
 }
 
 void MerkelBot::marketStats()
